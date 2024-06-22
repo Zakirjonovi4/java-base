@@ -1,17 +1,28 @@
 package com.company.lesson8;
 
-public class Bird extends Animal{
+public abstract class Bird extends Animal implements Flight{
     protected boolean flyNodeActive = false;
 
     public Bird() {
         super(MoveType.FLY);
     }
 
-    public final void takeOff(){
-        this.flyNodeActive = true;
+//    public final void takeOff(){
+//        this.flyNodeActive = true;
+//    }
+//    public final void landing(){
+//        this.flyNodeActive = false;
+//    }
+
+
+    @Override
+    public void takeOff() {
+        flyNodeActive = true;
     }
-    public final void landing(){
-        this.flyNodeActive = false;
+
+    @Override
+    public void landing() {
+        flyNodeActive = false;
     }
 
     public void isTheBirdFlying(){
